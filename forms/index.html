@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container" >
+  <div class="header">
+    <h2 >Type your information</h2>
+  </div>
+  <form class="form" id="form">
+   <div id="b" class="form-control"><br>
+    
+    <label for="FirstName">First name:</label>
+    <input type="text" id="FirstName" class="form-control"><br>
+
+    <label for="LastName">Last name:</label>
+    <input type="text" id="LastName" class="form-control"><br>
+
+    <label for="Email">Email:</label>
+    <input type="text" id="Email" class="form-control"><br>
+
+
+    <label for="Address">Address:</label>
+    <input type="text" id="Address" class="form-control"><br>
+
+    <label for="Pincode">Pincode:</label>
+    <input type="number" id="Pincode" class="form-control"><br>
+
+    <label for="gender" >Gender:</label>
+    <select name="gender" id="gender" placeholder="Gender"class="form-select" >
+      <option >Male</option>
+      <option >Female</option>
+      <option >Other</option>
+    </select><br>
+
+<label for="food">Food preference(Select only 3 please):</label><br>
+<div id="food">
+
+       <div  class="form-check  form-check-inline" >
+        <label for="MexicanCuisine" class="form-check-lable">Mexican Cuisine</label>
+        <input type="checkbox" id="MexicanCuisine"  value="Mexican Cuisine"  class="form-check-input">
+       </div>
+
+       <div class="form-check  form-check-inline" >
+        <label for="IndianCuisine" class="form-check-lable">Indian Cuisine</label>
+        <input type="checkbox" id="IndianCuisine" value="Indian Cuisine" class="form-check-input">
+       </div>
+      
+       <div  class="form-check  form-check-inline" >
+        <label for="ThaiCuisine" class="form-check-lable">Thai Cuisine</label>
+        <input type="checkbox" id="ThaiCuisine" value="Thai Cuisine" class="form-check-input">
+       </div>
+
+       
+       <div  class="form-check  form-check-inline" >
+        <label for="ItalianCuisine" class="form-check-lable">Italian Cuisine</label>
+        <input type="checkbox" id="ItalianCuisine" value="Italian Cuisine" class="form-check-input">
+       </div>
+
+       <div  class="form-check  form-check-inline" >
+        <label for="JapaneseCuisine" class="form-check-lable">Japanese Cuisine</label>
+        <input type="checkbox" id="JapaneseCuisine" value="Japanese Cuisine" class="form-check-input">
+       </div>
+
+
+      </div><br>
+
+      <label for="State">State:</label>
+      <input type="text" id="State" class="form-control"><br>
+
+      <label for="Country">Country:</label>
+      <input type="text" id="Country" class="form-control"><br>
+      <button id="button" type="button">Submit</button>
+   </div>
+   
+   
+  </form>
+</div><br>
+
+<div class="container">
+  <div class="header">
+    <h2 >Info Table</h2>
+  </div>
+
+  <div class="table-responsive">
+<table id="tb"  class="table table-info ">
+<tr>
+  <th>FirstName</th>
+  <th>LastName</th>
+  <th>email</th>
+  <th>Address</th>
+  <th>Pincode</th>
+  <th>Gender</th>
+  <th>Food preference</th>
+  <th>State</th>
+  <th>Country</th>
+</tr>
+
+
+</table>
+</div>
+
+</div><br><br>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
