@@ -1,0 +1,77 @@
+
+body{
+    background-color: hsl(275, 100%, 85%);
+}
+.card{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, red,blue);
+    color: #fff;
+    margin: 50px auto 0;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+}
+.form-control{
+  height: 50px;
+  border-radius: 25px;
+}
+.btn{
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: #fff;
+    height: 50px;
+    width: 50px;
+    font-weight: 600;
+    font-size: large;
+
+}
+
+.btn:hover{
+    background:red;  
+}
+.WeatherIcon{
+    width: 200px;
+    margin-top: 15px;
+}
+.temp{
+    font-size: 80px;
+    font-weight: 400;
+    text-shadow: 0 0 5px black,0 0 8px black;
+
+}
+.City{
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 30px;
+}
+.col img{
+    width: 50px;
+    margin-top: 30px
+}
+.Humidity{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 12px;
+    margin-top: 40px;
+}
+.para{
+    margin-left: 12px;
+    margin-top: -20px;
+}
+.Wind{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 12px;
+    margin-top: 40px;
+}
+.weather{
+    display: none;
+}

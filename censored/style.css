@@ -1,0 +1,32 @@
+body{
+    background-color: #ffd0d0;
+    font-family: 'sans-serif';
+}
+.card{
+    width: 90%;
+    max-width: 900px;
+    background: linear-gradient(135deg,#D4145A, #FBB03B);
+    color: #fff;
+    margin: 30px auto 0;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+}
+.btn
+{
+    background-color: rgb(255, 0, 0);
+    font-size: 30px;
+    font-weight: 800;
+    width: 100%;
+    border-radius: 15px;
+}
+.btn:hover{
+background-color: rgb(93, 0, 0);
+}
+.NoOFWords{
+    font-size: 25px;
+    font-weight: 500;
+}
+.result{
+    display: none ;
+}
