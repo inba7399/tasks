@@ -1,0 +1,96 @@
+#header{
+    padding: 15px;
+}
+#heading{
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 40px;
+}
+#btn-contact{
+    float: right;
+    margin-right: 40px;
+    height: 55px;
+    font-size: 20px;
+}
+#SignUpBaground{
+    background-image: url(./assets/formbaground.jpg);
+}
+#SignUp{
+    text-align: center;
+    margin: auto;
+    max-width: 700px;
+    padding-top: 170px;
+    padding-bottom: 170px; 
+}
+#Form{
+    margin-left: 0px;
+    font-size: 20px;
+    padding: 15px; 
+    margin-left: 10px;
+}
+#HeadingForm{
+    padding-bottom: 50px;
+    font-size: 50px;
+    color: aliceblue;
+   
+}
+#BtnForm{
+    padding: 15px;
+    font-size: 20px;
+    margin-left: -15px;
+}
+#FeaturesContainer{
+    text-align: center;
+    max-width: 350px;
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+#FeaturesTitle{
+    font-weight:620;
+    font-size: 30px;
+}
+#FeaturesDisc{
+  font-size: 20px;
+}
+#BodyContent{
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 150px;
+}
+.BodyContainer{
+    display: inline-block;
+
+}
+.BodyHeading{
+ font-size: 40px;
+ padding-bottom: 10px;
+}
+.BodyP{
+    font-size: 22px;
+    font-weight: 200;
+}
+.Feadbackimg{
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#FeadBack{
+    margin-top: 100px;
+}
+#Footer{
+    padding: 50px;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+.FootE{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    font-weight: 450;
+}
+#Footerimg{
+    float: right;
+}
+
