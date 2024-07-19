@@ -1,0 +1,47 @@
+body{
+  background-color: hsl(200, 100%, 50%);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: auto;
+}
+.OuterBox{
+  background-color: white;
+  width: 360px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-left: 40px;
+}
+.OuterBox .InnerBox1{
+  text-align: center;
+  padding: 6px;
+  font-size: 25px;
+}
+.OuterBox .InnerBox2{
+  padding-left: 30px;
+  font-size: large;
+  font-weight: 600;
+}
+.OuterBox .btn{
+  background-color: rgb(15, 75, 255);
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+  
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px;
+  width: 90%;
+  margin: 20px;
+  margin-bottom: 10px;
+
+}
+.OuterBox .btn:hover{
+  cursor: pointer;
+  color: black;
+}
+
+.Price
+{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
