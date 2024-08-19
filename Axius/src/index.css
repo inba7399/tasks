@@ -1,0 +1,17 @@
+body{
+background-color: #268a65;
+}
+
+.table th{
+    text-align: center;
+}
+.table td{
+ padding: 2px;
+ margin: 2px;
+vertical-align: middle;
+font-size: 13px;
+}
+.tableBase{
+    background-color:#06402B ;
+    border-radius: 10px;
+}
