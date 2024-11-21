@@ -1,0 +1,251 @@
+users Collection
+
+{
+  "_id": ObjectId,
+  "name": "string",
+  "email": "string",
+  "phone": "string",
+  "batch": "string"
+}
+
+
+codekata Collection
+
+{
+  "_id": ObjectId,
+  "user_id": ObjectId,  
+  "problems_solved": "number"
+}
+
+
+attendance Collection
+
+{
+  "_id": ObjectId,
+  "user_id": ObjectId,  
+  "date": "ISODate",
+  "status": "Present" | "Absent"
+}
+topics Collection
+
+{
+  "_id": ObjectId,
+  "name": "string",
+  "date": "ISODate"
+}
+
+
+tasks Collection
+
+{
+  "_id": ObjectId,
+  "topic_id": ObjectId,  
+  "user_id": ObjectId,   
+  "date": "ISODate",
+  "status": "Submitted" | "Not Submitted"
+}
+
+
+company_drives Collection
+
+{
+  "_id": ObjectId,
+  "company_name": "string",
+  "date": "ISODate"
+}
+
+
+placements Collection
+
+{
+  "_id": ObjectId,
+  "drive_id": ObjectId,  
+  "user_id": ObjectId   
+}
+
+
+mentors Collection
+
+
+{
+  "_id": ObjectId,
+  "name": "string",
+  "email": "string"
+}
+
+
+mentor_assignments Collection
+
+{
+  "_id": ObjectId,
+  "mentor_id": ObjectId, 
+  "user_id": ObjectId    
+}
+
+
+Queries
+
+1. Find all topics and tasks taught in October
+
+db.topics.aggregate([
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "_id",
+      foreignField: "topic_id",
+      as: "tasks"
+    }
+  },
+  {
+    $match: {
+      date: {
+        $gte: ISODate("2023-10-01T00:00:00Z"),
+        $lt: ISODate("2023-11-01T00:00:00Z")
+      }
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      tasks: { name: 1 }
+    }
+  }
+]);
+
+
+2. Find all company drives between 15-Oct-2020 and 31-Oct-2020
+
+db.company_drives.find({
+  date: {
+    $gte: ISODate("2020-10-15T00:00:00Z"),
+    $lte: ISODate("2020-10-31T23:59:59Z")
+  }
+});
+
+
+3. Find all company drives and students who appeared for placements
+
+db.placements.aggregate([
+  {
+    $lookup: {
+      from: "company_drives",
+      localField: "drive_id",
+      foreignField: "_id",
+      as: "drive_details"
+    }
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "student_details"
+    }
+  },
+  {
+    $project: {
+      "drive_details.company_name": 1,
+      "student_details.name": 1
+    }
+  }
+]);
+
+
+4. Find the number of problems solved by each user in CodeKata
+
+db.codekata.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user_details"
+    }
+  },
+  {
+    $project: {
+      "user_details.name": 1,
+      problems_solved: 1
+    }
+  }
+]);
+
+
+5. Find all mentors with more than 15 mentees
+
+db.mentor_assignments.aggregate([
+  {
+    $group: {
+      _id: "$mentor_id",
+      mentee_count: { $sum: 1 }
+    }
+  },
+  {
+    $match: {
+      mentee_count: { $gt: 15 }
+    }
+  },
+  {
+    $lookup: {
+      from: "mentors",
+      localField: "_id",
+      foreignField: "_id",
+      as: "mentor_details"
+    }
+  },
+  {
+    $project: {
+      "mentor_details.name": 1,
+      mentee_count: 1
+    }
+  }
+]);
+
+
+6. Find the number of users absent and tasks not submitted between 15-Oct-2020 and 31-Oct-2020
+
+db.attendance.aggregate([
+  {
+    $match: {
+      status: "Absent",
+      date: {
+        $gte: ISODate("2020-10-15T00:00:00Z"),
+        $lte: ISODate("2020-10-31T23:59:59Z")
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "tasks",
+      localField: "user_id",
+      foreignField: "user_id",
+      as: "tasks"
+    }
+  },
+  {
+    $unwind: "$tasks"
+  },
+  {
+    $match: {
+      "tasks.status": "Not Submitted"
+    }
+  },
+  {
+    $group: {
+      _id: "$user_id"
+    }
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "_id",
+      foreignField: "_id",
+      as: "user_details"
+    }
+  },
+  {
+    $project: {
+      "user_details.name": 1
+    }
+  }
+]);
